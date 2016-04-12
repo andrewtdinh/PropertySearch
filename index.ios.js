@@ -21,4 +21,17 @@ class HelloWorld extends React.Component {
   }
 }
 
+class PropertyFinderApp extends React.Component {
+  render() {
+    return (
+      <React.NavigatorIOS
+        style={styles.container}
+        initialRoute={{
+          title: 'Property Finder',
+          component: HelloWorld,
+        }}/>
+    );
+  }
+}
+
 React.AppRegistry.registerComponent('PropertyFinder', function() { return PropertyFinderApp });
