@@ -20,3 +20,5 @@ class PropertyFinderApp extends React.Component {
     return React.createElement(React.Text, {style: styles.text}, "Hello World!");
   }
 }
+
+React.AppRegistry.registerComponent('PropertyFinder', function() { return PropertyFinderApp });
