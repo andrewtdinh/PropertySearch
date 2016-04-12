@@ -15,7 +15,7 @@ var styles = React.StyleSheet.create({
   }
 });
 
-class PropertyFinderApp extends React.Component {
+class HelloWorld extends React.Component {
   render() {
     return <React.Text style={styles.text}>Hello World (Again)</React.Text>;
   }
