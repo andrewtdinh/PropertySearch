@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+var SearchPage = require('./SearchPage');
 
 var styles = React.StyleSheet.create({
   text: {
