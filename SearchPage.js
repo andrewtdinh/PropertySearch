@@ -75,6 +75,7 @@ class SearchPage extends Component {
     console.log(this.state.searchString);
   }
   render() {
+    console.log('SearchPage.render');
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
