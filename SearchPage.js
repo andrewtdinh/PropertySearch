@@ -62,6 +62,25 @@ var styles = StyleSheet.create({
     height: 138
   }
 });
+
+function urlForQueryAndPage(key, value, pageNumber) {
+  var data = {
+    country: 'uk',
+    pretty: '1',
+    encoding: 'json',
+    listing_type: 'buy',
+    action: 'search_listings',
+    page: pageNumber
+  };
+  data[key] = value;
+
+  var querystring = Object.keys(data)
+  .map(key => key + '=' + encodeURIComponent(data[key]))
+  .join('&');
+
+  return 'http://api.nestoria.co.uk/api?' + querystring;
+};
+
 class SearchPage extends Component {
   constructor(props) {
     super(props);
@@ -101,7 +120,8 @@ class SearchPage extends Component {
             onChange={this.onSearchTextChanged.bind(this)}
             placeholder='Search via name or postcode'/>
           <TouchableHighlight style={styles.button}
-              underlayColor='#99d9f4'>
+              underlayColor='#99d9f4'
+              onPress={this.onSearchPressed.bind(this)}>
             <Text style={styles.buttonText}>Go</Text>
           </TouchableHighlight>
         </View>
