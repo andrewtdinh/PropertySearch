@@ -87,6 +87,7 @@ class SearchPage extends Component {
           <TextInput
             style={styles.searchInput}
             value={this.state.searchString}
+            onChange={this.onSearchTextChanged.bind(this)}
             placeholder='Search via name or postcode'/>
           <TouchableHighlight style={styles.button}
               underlayColor='#99d9f4'>
