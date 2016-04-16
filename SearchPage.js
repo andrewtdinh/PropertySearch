@@ -74,6 +74,10 @@ class SearchPage extends Component {
     this.setState({ searchString: event.nativeEvent.text });
   }
   render() {
+    var spinner = this.state.isLoading ?
+      ( <ActivityIndicatorIOS
+      size='large'/> ) :
+      ( <View/>);
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
