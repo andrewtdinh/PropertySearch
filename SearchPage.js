@@ -77,6 +77,10 @@ class SearchPage extends Component {
     console.log(query);
     this.setState({ isLoading: true });
   }
+  onSearchPressed() {
+    var query = urlForQueryAndPage('place_name', this.state.searchString, 1);
+    this._executeQuery(query);
+  }
   render() {
     var spinner = this.state.isLoading ?
       ( <ActivityIndicatorIOS
