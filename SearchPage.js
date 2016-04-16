@@ -63,6 +63,12 @@ var styles = StyleSheet.create({
   }
 });
 class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchString: 'london'
+    };
+  }
   render() {
     return (
       <View style={styles.container}>
