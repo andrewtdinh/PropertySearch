@@ -70,12 +70,9 @@ class SearchPage extends Component {
     };
   }
   onSearchTextChanged(event) {
-    console.log('onSearchTextChanged');
     this.setState({ searchString: event.nativeEvent.text });
-    console.log(this.state.searchString);
   }
   render() {
-    console.log('SearchPage.render');
     return (
       <View style={styles.container}>
         <Text style={styles.description}>
