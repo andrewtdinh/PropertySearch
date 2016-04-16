@@ -73,6 +73,10 @@ class SearchPage extends Component {
   onSearchTextChanged(event) {
     this.setState({ searchString: event.nativeEvent.text });
   }
+  _executeQuery(query) {
+    console.log(query);
+    this.setState({ isLoading: true });
+  }
   render() {
     var spinner = this.state.isLoading ?
       ( <ActivityIndicatorIOS
