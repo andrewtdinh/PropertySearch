@@ -132,6 +132,7 @@ class SearchPage extends Component {
         </TouchableHighlight>
         <Image source={require('./Resources/house.png')} style={styles.image}/>
         {spinner}
+        <Text style={styles.description}>{this.state.message}</Text>
       </View>
     );
   }
