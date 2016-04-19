@@ -51,15 +51,25 @@ class SearchResults extends Component {
     }
 
     renderRow(rowData, sectionID, rowID) {
+      var price = rowData.price_formatted.split(' ')[0];
+
       return (
-        <TouchableHighlight
-          underlayColor='#dddddd'>
+        <TouchableHighlight onPress={() => this.rowPressed(rowData.guid)}
+            underlayColor='#dddddd'>
           <View>
-            <Text>{rowData.title}</Text>
+            <View style={styles.rowContainer}>
+              <Image style={styles.thumb} source={{ uri: rowData.img_url }} />
+              <View  style={styles.textContainer}>
+                <Text style={styles.price}>£{price}</Text>
+                <Text style={styles.title}
+                      numberOfLines={1}>{rowData.title}</Text>
+              </View>
+            </View>
+            <View style={styles.separator}/>
           </View>
         </TouchableHighlight>
       );
-    }
+    }   
 
     render() {
       return (
