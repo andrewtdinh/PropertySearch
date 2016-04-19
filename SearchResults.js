@@ -40,7 +40,6 @@ var styles = StyleSheet.create({
 });
 
 class SearchResults extends Component {
-
   constructor(props) {
     super(props);
     var dataSource = new ListView.DataSource(
@@ -50,9 +49,12 @@ class SearchResults extends Component {
       };
     }
 
+  rowPressed(propertyGuid) {
+    var property = this.props.listings.filter(prop => prop.guid === propertyGuid)[0];
+  }
+  
   renderRow(rowData, sectionID, rowID) {
     var price = rowData.price_formatted.split(' ')[0];
-
     return (
       <TouchableHighlight onPress={() => this.rowPressed(rowData.guid)}
           underlayColor='#dddddd'>
