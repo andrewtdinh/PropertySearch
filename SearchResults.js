@@ -50,34 +50,34 @@ class SearchResults extends Component {
       };
     }
 
-    renderRow(rowData, sectionID, rowID) {
-      var price = rowData.price_formatted.split(' ')[0];
+  renderRow(rowData, sectionID, rowID) {
+    var price = rowData.price_formatted.split(' ')[0];
 
-      return (
-        <TouchableHighlight onPress={() => this.rowPressed(rowData.guid)}
-            underlayColor='#dddddd'>
-          <View>
-            <View style={styles.rowContainer}>
-              <Image style={styles.thumb} source={{ uri: rowData.img_url }} />
-              <View  style={styles.textContainer}>
-                <Text style={styles.price}>£{price}</Text>
-                <Text style={styles.title}
-                      numberOfLines={1}>{rowData.title}</Text>
-              </View>
+    return (
+      <TouchableHighlight onPress={() => this.rowPressed(rowData.guid)}
+          underlayColor='#dddddd'>
+        <View>
+          <View style={styles.rowContainer}>
+            <Image style={styles.thumb} source={{ uri: rowData.img_url }} />
+            <View  style={styles.textContainer}>
+              <Text style={styles.price}>£{price}</Text>
+              <Text style={styles.title}
+                    numberOfLines={1}>{rowData.title}</Text>
             </View>
-            <View style={styles.separator}/>
           </View>
-        </TouchableHighlight>
-      );
-    }   
+          <View style={styles.separator}/>
+        </View>
+      </TouchableHighlight>
+    );
+  }
 
-    render() {
-      return (
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this.renderRow.bind(this)}/>
-      );
-    }
+  render() {
+    return (
+      <ListView
+        dataSource={this.state.dataSource}
+        renderRow={this.renderRow.bind(this)}/>
+    );
+  }
 }
 
 module.exports = SearchResults;
