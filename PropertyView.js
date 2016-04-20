@@ -69,3 +69,5 @@ class PropertyView extends Component {
     );
   }
 }
+
+module.exports = PropertyView;
