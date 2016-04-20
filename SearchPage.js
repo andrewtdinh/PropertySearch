@@ -148,7 +148,8 @@ class SearchPage extends Component {
           </TouchableHighlight>
         </View>
         <TouchableHighlight style={styles.button}
-            underlayColor='#99d9f4'>
+            underlayColor='#99d9f4'
+            onPress={this.onLocationPressed.bind(this)}>
           <Text style={styles.buttonText}>Location</Text>
         </TouchableHighlight>
         <Image source={require('./Resources/house.png')} style={styles.image}/>
