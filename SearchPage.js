@@ -63,7 +63,6 @@ var styles = StyleSheet.create({
     height: 138
   }
 });
-
 function urlForQueryAndPage(key, value, pageNumber) {
   var data = {
     country: 'uk',
